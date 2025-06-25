@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.4.47/css/materialdesignicons.min.css');
+
+$border_color: #e1e1e1;
+$global_radius: 20px;
+@mixin prevent_overlap($line_limit) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line_limit;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#product {
+  max-width: 1280px;
+  margin: auto;
+  * {
+    font-family: 'Outfit', Roboto, sans-serif;
+  }
+  .product-breadcrumb {
+    span {
+      margin: 0 10px;
+    }
+    a {
+      color: #1664C0;
+      text-decoration: none;
+      &.active {
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+  .product-content-wrapper {
+    max-width: 700px;
+    width: 100%;
+  }
+  .product-title {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 40px;
+  }
+  .product-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .product-buttons .v-btn {
+    font-size: 16px !important;
+  }
+  .product-rating {
+    font-size: 16px;
+    .mdi-star {
+      font-size: 25px;
+      top: 3px;
+      display: inline-block;
+      margin-right: 5px;
+      position: relative;
+      &.active {
+        color: goldenrod;
+      }
+    }
+    .rating-count {
+      margin-left: 10px;
+      color: #1664C0;
+    }
+  }
+  .product-price {
+    font-size: 24px;
+    font-weight: 500;
+    .orig-price {
+      text-decoration: line-through;
+      color: #00000099;
+      margin-left: 10px;
+    }
+  }
+  .product-buttons {
+    .normalize-casing * {
+      text-transform: none !important;
+    }
+  }
+  .product-delivery {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .product-table {
+    border-radius: 15px;
+    border: 1px solid $border_color;
+    width: 100%;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      td {
+        padding: 10px 15px;
+        border-right: 1px solid $border_color;
+        border-bottom: 1px solid $border_color;
+        border-left: none !important;
+        border-top: none !important;
+        background: none !important;
+
+        width: 50%;
+        &:last-child {
+          border-right: none;
+        }
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+  .product-tabs {
+    .v-btn {
+      background:transparent;
+      color:rgb(0,117,255);
+      &.active {
+        background:#fff;
+        color:rgb(0,117,255);
+      }
+    }
+  }
+
+  .swiper {
+    padding-bottom: 20px;
+    margin-bottom: 100px;
+
+    .swiper-button-next {
+      right: 0;
+    }
+    .swiper-button-prev {
+      margin-right: 20px;
+    }
+    .swiper-wrapper {
+      overflow: visible;
+      margin-bottom: 30px;
+    }
+    .product-card-wrapper {
+      transition: .3s;
+      &:hover {
+        box-shadow: 0 1px 5px rgba(139, 173, 225, 0.55) !important;
+        border: 1px solid rgba(0, 161, 255, 0.56) !important;
+      }
+      .title-wrap {
+        word-break: break-word;
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .product-image {
+        width: auto;
+        height: 180px;
+        display: block;
+        margin-top: 0 !important;
+      }
+      .prod-img-wrapper {
+        min-height: 250px;
+        display: flex;
+        align-items: center;
+      }
+      .ratings-box {
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .product-title-link {
+        text-decoration: none;
+        cursor: pointer;
+        color: #000000;
+        font-weight: 500;
+        font-size: 16px;
+        &:hover {
+          color: #0d47a1;
+          text-decoration: underline;
+        }
+        @include prevent_overlap(1);
+      }
+      .best-seller {
+        top: 20px;
+        left:20px;
+        z-index: 3;
+        position: absolute;
+      }
+      .excerpt-wrap {
+        font-size:12px;
+        .product-excerpt {
+          min-height: 50px;
+          @include prevent_overlap(3);
+        }
+      }
+      .model-rating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & .model-text {
+          font-size: 12px !important;
+        }
+        .rating-stars {
+          font-size: 16px;
+          text-align: right;
+          color:#ff9900;
+          display: inline-flex; /* or flex */
+          white-space: nowrap;
+          align-items: center;
+        }
+      }
+      .product-price {
+        .starts-at {
+          font-size: 14px;
+          font-weight: 400;
+          margin-right: 5px;
+        }
+        .the-price {
+          font-size: 24px;
+          font-weight: 500;
+        }
+      }
+      .ratings-box {
+        font-family: Outfit, Roboto, sans-serif;
+        .the-ratings {
+          font-weight: 400;
+          font-size: 16px;
+        }
+        .free-delivery {
+          font-weight: 500;
+          font-size: 14px;
+        }
+      }
+    }
+    .product-slides-title {
+      font-size:32px;
+      font-weight: 500;
+    }
+  }
+}
